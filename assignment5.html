@@ -1,0 +1,39 @@
+&lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;
+        &lt;title&gt;Assignment 5 CSIT 281 - JavaScript&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+       
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        // Create an array called planets. Add the names of all of the planets in
+the
+        // array. Then create a loop that goes through the planets array and
+lists them
+        // on the page. Use a variable for the number of items in the array when
+looping
+        // through. This way the entire array will be listed if planets like
+Pluto are
+        // added or removed in the future.
+        let nubmerOfPlanets = 8;
+       
+        // set nubmerOfPlanets to 9  . if added Pluto in the future.
+        // Pluto not an planet no.
+     
+       
+        var planets = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;,
+&quot;Uranus&quot;, &quot;Neptune&quot; , &quot;Pluto&quot;];
+        document.write(&#39;&lt;h1 style=&quot;color:blue&quot;&gt;Planets of solar system&lt;/h1&gt;&#39;);
+        document.write(&#39;&lt;ol&gt;&#39;);
+        for (let i = 0; i &lt; nubmerOfPlanets; i++) {
+            document.write(&#39;&lt;li&gt;&#39;);
+            document.write(planets[i] + &quot;&lt;br&gt;&quot;);
+            document.write(&#39;&lt;/li&gt;&#39;);
+           
+           
+        }
+        document.write(&#39;&lt;/ol&gt;&#39;);
+               
+        &lt;/script&gt;
+       
+        &lt;/body&gt;
+        &lt;/html&gt;
