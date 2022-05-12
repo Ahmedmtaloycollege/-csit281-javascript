@@ -4,6 +4,41 @@
 
 <style>
 
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+ 
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+.row{
+    display: none;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  background-color: #339ccc;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+  font-style: normal;
+}
+
 </style>
 
 
@@ -15,34 +50,59 @@
 <form>
 
 
-
-Select your favorite season to change the website theme:
-
-<select id="background" onchange="updateBackgroundColor(this)">
-  <option  value="#ffffff">Spring</option>
-  <option value="#cc0000">Summer</option>
-  <option value="#00cc00">Autumn</option>
-  <option value="#0000cc">Winter</option>
+<h2>Projects</h2>
+Select a Project :
+<select id="background" onchange="projectSelector(this)">
+  <option  value="projectOne">Dating Application</option>
+  <option value="projectTwo">Ecommerce website</option>
+  <option value="projectThree">Expense Tracker App</option>
+  <option value="projectFour">Car Rental App</option>
 
 </select>
 
 </form>
-<div id="spring" style="display: block;">
-    <h1>Spring</h1>
-    <img src="https://c.tadst.com/gfx/1200x630/spring-blossom.jpg?1" height="300" width="600" id="springImage">
-</div>
-<div id="summer" style="display: none;">
-    <h1>Summer</h1>
-    <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_598789974_2000133320009280368_367564.jpg" height="300" width="600" id="summerImage">
-</div>
-<div id="autumn" style="display: none;">
-    <h1>Autumn</h1>
-    <img src="https://www.treehugger.com/thmb/D_ej1LfraXvbsMn0s4bXYRRfuO8=/788x443/filters:fill(auto,1)/overhead-aerial-view-of-winding-mountain-road-inside-colorful-autumn-forest-1250041285-26c8352c30ec468a8a8f126cb43fc3a0.jpg"height="300" width="600" id="autumnImage">
-</div>
-<div id="winter" style="display: none;">
-    <h1>Winter</h1>
-    <img src="https://thumbs.dreamstime.com/b/white-trees-snow-city-park-beautiful-winter-landscape-white-trees-snow-city-park-beautiful-winter-122257507.jpg" height="300" width="600" id="winterImage">
-</div>
+<div class="row" id="projectOne" style="display:block;">
+    <div class="column left">
+      <h2>Dating Application</h2>
+      <img src="https://i.pinimg.com/736x/d5/d4/42/d5d442915f2a1a99f9ebabb1e1e4fb41.jpg" height="300" width="380" id="springImage">
+    </div>
+    <div class="column right">
+        <h3>Soulmate Dating App</h3>
+      <p>Soulmate is a  dating app rich in solutions according to the business requirements. This dating app solutions is jammed with comprehensive & attractive features and amazing UI/UX that is appropriate to stay competitive in the market. Being a top dating app development company, we offer an extensive range of services related to dating apps for those who are willing to invest in this sector. With years of experience, our team has provided efficient dating app design & development services to help businesses gain a large customer base. Be it a custom, readymade, or white-label dating application, we provide result-oriented solutions that help businesses to get higher revenue and other profits.</p>
+    </div>
+  </div>
+  
+  <div class="row" id="projectTwo">
+    <div class="column left">
+      <h2>Ecommerce website</h2>
+      <img src="https://design4users.com/wp-content/uploads/2021/03/website-ecommerce-design.png.pagespeed.ce.UDgKx9BWOo.png" height="300" width="380" id="springImage">
+    </div>
+    <div class="column right">
+        <h3>EpiMax Shopping Website</h3>
+      <p>Everything starting from the name to the design of this ecommerce website is memorable. You see big bold pictures as part of their web design, with fewer words. If you’re looking for how to design a website in a unique way, you can definitely take some inspiration from The Horse’s amazing website design.</p>
+    </div>
+  </div>
+  <div class="row" id="projectThree">
+    <div class="column left">
+      <h2>Expense Tracker App</h2>
+      <img src="https://i.pinimg.com/736x/4f/c9/98/4fc998276ad1c29e69ef83d88243f5c6.jpg" height="300" width="380" id="springImage">
+    </div>
+    <div class="column right">
+        <h3>ExpeTracker</h3>
+      <p>ExpeTracker has expense-tracking functionality integrated into its app, allowing you to aggregate account balances, track spending and monitor your net worth. While it garners high marks for its functionality, some users are surprised by the number of calls they receive after providing a phone number.</p>
+    </div>
+  </div>
+  <div class="row" id="projectFour">
+    <div class="column left">
+      <h2>Car Rental App</h2>
+      <img src="https://i.pinimg.com/originals/bc/b0/b0/bcb0b035c27ccd3d84fca5ddf6cb53c8.png" height="300" width="380" id="springImage">
+    </div>
+    <div class="column right">
+        <h3>JimCar Rental App</h3>
+      <p>JimCar is one of a few all-in-one solutions for car rental apps. This one covers car rentals along with airplane flights and hotels. You can use an app like this to find bundles on things like rooms, flights, and car rentals to save yourself a few bucks. Additionally, the app has discovery features in case you’re going to a city that you don’t know. We wouldn’t recommend such an app for someone who needs just a car a rental. However, it’s a good solution for those planning a vacation or a business trip somewhere.</p>
+    </div>
+  </div>
+  
 
 
 
@@ -54,51 +114,50 @@ Select your favorite season to change the website theme:
 // the background color, add and image and have it change and text and have
 // it change to match the selected season.
 
-function updateBackgroundColor(selectElem) {
+function projectSelector(selectElem) {
   var i = selectElem.selectedIndex;
   if (i < 0) {
+   
     return;
   }
-  document.body.style.backgroundColor = selectElem.options[i].value;
-  if (selectElem.value == "#ffffff")
-  {
-    document.getElementById('spring').style.display = 'block';
-    document.getElementById('summer').style.display = 'none';
-    document.getElementById('autumn').style.display = 'none';
-    document.getElementById('winter').style.display = 'none';
-  }
-  else if (selectElem.value == "#cc0000")
-  {
-    document.getElementById('spring').style.display = 'none';
-    document.getElementById('summer').style.display = 'block';
-    document.getElementById('autumn').style.display = 'none';
-    document.getElementById('winter').style.display = 'none';
-  }
-  else if (selectElem.value == "#00cc00")
-  {
-    document.getElementById('spring').style.display = 'none';
-    document.getElementById('summer').style.display = 'none';
-    document.getElementById('autumn').style.display = 'block';
-    document.getElementById('winter').style.display = 'none';
-    
-  }
-  else if (selectElem.value == "#0000cc")
-  {
-    document.getElementById('spring').style.display = 'none';
-    document.getElementById('summer').style.display = 'none';
-    document.getElementById('autumn').style.display = 'none';
-    document.getElementById('winter').style.display = 'block';
-    
-  }else if (selectElem.value != "#ffffff" && selectElem.value != "#cc0000" && selectElem.value != "#00cc00" && selectElem.value != "#0000cc")
-  {
-    document.getElementById('spring').style.display = 'none';
-    document.getElementById('summer').style.display = 'none';
-    document.getElementById('autumn').style.display = 'none';
-    document.getElementById('winter').style.display = 'none';
-    
-  }
-}
 
+  var optionValue = selectElem.options[i].value;
+
+ 
+  if (optionValue === "projectOne") {
+    document.body.style.backgroundColor = "#33CC99";
+    document.getElementById('projectOne').style.display = 'block';
+    document.getElementById('projectTwo').style.display = 'none';
+    document.getElementById('projectThree').style.display = 'none';
+    document.getElementById('projectFour').style.display = 'none';
+  }
+  else if (optionValue === "projectTwo") {
+    document.body.style.backgroundColor = "#FF0066";
+    document.getElementById('projectOne').style.display = 'none';
+    document.getElementById('projectTwo').style.display = 'block';
+    document.getElementById('projectThree').style.display = 'none';
+    document.getElementById('projectFour').style.display = 'none';
+  }
+  else if (optionValue === "projectThree") {
+    document.body.style.backgroundColor = "#FF9933";
+    document.getElementById('projectOne').style.display = 'none';
+    document.getElementById('projectTwo').style.display = 'none';
+    document.getElementById('projectThree').style.display = 'block';
+    document.getElementById('projectFour').style.display = 'none';
+  }
+  else if (optionValue === "projectFour") {
+    document.body.style.backgroundColor = "#0099FF";
+    document.getElementById('projectOne').style.display = 'none';
+    document.getElementById('projectTwo').style.display = 'none';
+    document.getElementById('projectThree').style.display = 'none';
+    document.getElementById('projectFour').style.display = 'block';
+  }
+  else {
+    document.write("Something went wrong. Please refresh.");
+  }
+
+
+}
 
 
 </script>
