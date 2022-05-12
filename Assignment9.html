@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<form>
+
+
+
+Select your favorite season to change the website theme:
+
+<select id="background" onchange="updateBackgroundColor(this)">
+  <option  value="#ffffff">Spring</option>
+  <option value="#cc0000">Summer</option>
+  <option value="#00cc00">Autumn</option>
+  <option value="#0000cc">Winter</option>
+
+</select>
+
+</form>
+<div id="spring" style="display: block;">
+    <h1>Spring</h1>
+    <img src="https://c.tadst.com/gfx/1200x630/spring-blossom.jpg?1" height="300" width="600" id="springImage">
+</div>
+<div id="summer" style="display: none;">
+    <h1>Summer</h1>
+    <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_598789974_2000133320009280368_367564.jpg" height="300" width="600" id="summerImage">
+</div>
+<div id="autumn" style="display: none;">
+    <h1>Autumn</h1>
+    <img src="https://www.treehugger.com/thmb/D_ej1LfraXvbsMn0s4bXYRRfuO8=/788x443/filters:fill(auto,1)/overhead-aerial-view-of-winding-mountain-road-inside-colorful-autumn-forest-1250041285-26c8352c30ec468a8a8f126cb43fc3a0.jpg"height="300" width="600" id="autumnImage">
+</div>
+<div id="winter" style="display: none;">
+    <h1>Winter</h1>
+    <img src="https://thumbs.dreamstime.com/b/white-trees-snow-city-park-beautiful-winter-landscape-white-trees-snow-city-park-beautiful-winter-122257507.jpg" height="300" width="600" id="winterImage">
+</div>
+
+
+
+
+<script>
+
+// Extend the example from the class lecture to use the dropdown to
+// have the user select their favorite. When the season is selected change
+// the background color, add and image and have it change and text and have
+// it change to match the selected season.
+
+function updateBackgroundColor(selectElem) {
+  var i = selectElem.selectedIndex;
+  if (i < 0) {
+    return;
+  }
+  document.body.style.backgroundColor = selectElem.options[i].value;
+  if (selectElem.value == "#ffffff")
+  {
+    document.getElementById('spring').style.display = 'block';
+    document.getElementById('summer').style.display = 'none';
+    document.getElementById('autumn').style.display = 'none';
+    document.getElementById('winter').style.display = 'none';
+  }
+  else if (selectElem.value == "#cc0000")
+  {
+    document.getElementById('spring').style.display = 'none';
+    document.getElementById('summer').style.display = 'block';
+    document.getElementById('autumn').style.display = 'none';
+    document.getElementById('winter').style.display = 'none';
+  }
+  else if (selectElem.value == "#00cc00")
+  {
+    document.getElementById('spring').style.display = 'none';
+    document.getElementById('summer').style.display = 'none';
+    document.getElementById('autumn').style.display = 'block';
+    document.getElementById('winter').style.display = 'none';
+    
+  }
+  else if (selectElem.value == "#0000cc")
+  {
+    document.getElementById('spring').style.display = 'none';
+    document.getElementById('summer').style.display = 'none';
+    document.getElementById('autumn').style.display = 'none';
+    document.getElementById('winter').style.display = 'block';
+    
+  }else if (selectElem.value != "#ffffff" && selectElem.value != "#cc0000" && selectElem.value != "#00cc00" && selectElem.value != "#0000cc")
+  {
+    document.getElementById('spring').style.display = 'none';
+    document.getElementById('summer').style.display = 'none';
+    document.getElementById('autumn').style.display = 'none';
+    document.getElementById('winter').style.display = 'none';
+    
+  }
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
