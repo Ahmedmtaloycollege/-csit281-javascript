@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Navigation bar</title>
+<style>
 
+/* On smaller screens*/
+@media screen and (max-height: 3800px) {
+    .sidenav {padding-top: 10px;}
+    .sidenav a {font-size: 16px;}
+}
+/* The side navigation menu */
+.sidenav {
+    background-color: rgb(46, 3, 3);
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    
+}
+
+/* navigation menu */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    color: #facbcb;
+    transition: 0.3s
+}
+
+/* hovering color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style of the hambugger button */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+</style>
+
+<script>
+    /* width of sidebar when opened*/
+function openSide() {
+    document.getElementById("mySidenav").style.width = "300px";
+}
+
+/* width of the side bar when closed */
+function closeSide() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</head>
+
+<body>
+
+    <body>
+        <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSide()">&times;</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <!-- An Icon to open the side nav-->
+      <span onclick="openSide()"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" width="40px" style="padding-top: 40px; padding-left: 40px;"></span>
+      
+
+</body>
+
+</html>
